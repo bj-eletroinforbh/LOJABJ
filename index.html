@@ -5,61 +5,205 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BJ Eletroinfor BH - Assistência Técnica</title>
     <style>
+        /* Reset básico */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            line-height: 1.6;
             background-color: #f9f9f9;
             color: #333;
         }
+
+        /* Header e Menu */
         header {
             background-color: #007BFF;
             color: white;
-            padding: 40px 20px;
-            text-align: center;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         header h1 {
-            margin: 0;
-            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 10px;
         }
-        header p {
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-        main {
-            padding: 20px;
+        nav {
             text-align: center;
         }
-        main p {
-            font-size: 1.1em;
-            line-height: 1.6em;
-            max-width: 700px;
-            margin: 20px auto;
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
         }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Seções */
+        section {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #007BFF;
+        }
+
+        /* Serviços */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .service-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Galeria */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .gallery img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Contato */
+        .contact a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact a:hover {
+            background-color: #1ebe5b;
+        }
+
+        /* Formulário */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        input, textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+        button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
         footer {
             background-color: #007BFF;
             color: white;
             text-align: center;
             padding: 15px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+            .gallery img {
+                width: 100%;
+                height: auto;
+            }
         }
     </style>
 </head>
 <body>
+
     <header>
         <h1>BJ Eletroinfor BH</h1>
-        <p>Assistência Técnica especializada em computadores, notebooks e eletrônicos.</p>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#contato">Contato</a>
+        </nav>
     </header>
 
-    <main>
-        <p>Bem-vindo ao site da BJ Eletroinfor BH!  
-        Aqui oferecemos serviços rápidos, confiáveis e com preços justos para manter seus equipamentos funcionando como novos. Navegue pelo site para conhecer nossos serviços e entrar em contato conosco.</p>
-    </main>
+    <section id="inicio">
+        <h2>Bem-vindo à BJ Eletroinfor BH</h2>
+        <p>Oferecemos serviços rápidos, confiáveis e com preços justos para manter seus equipamentos funcionando como novos. Navegue pelo site para conhecer nossos serviços e entrar em contato conosco.</p>
+    </section>
+
+    <section id="servicos">
+        <h2>Serviços Oferecidos</h2>
+        <div class="services">
+            <div class="service-card">
+                <h3>Conserto de Computadores</h3>
+                <p>Reparo de hardware e software para computadores de todas as marcas.</p>
+            </div>
+            <div class="service-card">
+                <h3>Manutenção de Notebooks</h3>
+                <p>Limpeza, troca de peças e otimização de desempenho.</p>
+            </div>
+            <div class="service-card">
+                <h3>Recuperação de Dados</h3>
+                <p>Recuperamos arquivos perdidos em HDs, SSDs e pendrives.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria">
+        <h2>Galeria de Fotos</h2>
+        <div class="gallery">
+            <img src="exemplo1.jpg" alt="Serviço 1">
+            <img src="exemplo2.jpg" alt="Serviço 2">
+            <img src="exemplo3.jpg" alt="Serviço 3">
+        </div>
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Fale conosco pelo WhatsApp ou preencha o formulário abaixo:</p>
+        <div class="contact">
+            <a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a>
+        </div>
+        <form action="#" method="post">
+            <input type="text" name="nome" placeholder="Seu nome" required>
+            <input type="email" name="email" placeholder="Seu e-mail" required>
+            <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
 
     <footer>
         &copy; 2025 BJ Eletroinfor BH - Todos os direitos reservados
     </footer>
+
 </body>
 </html>
