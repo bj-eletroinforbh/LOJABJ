@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BJ Eletroinfor BH - Assistência Técnica</title>
     <style>
-        /* Reset básico */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -15,7 +14,6 @@
             color: #333;
         }
 
-        /* Header e Menu */
         header {
             background-color: #007BFF;
             color: white;
@@ -24,42 +22,39 @@
             top: 0;
             z-index: 1000;
         }
-        header h1 {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        nav {
-            text-align: center;
-        }
+
+        header h1 { text-align: center; margin-bottom: 10px; }
+
+        nav { text-align: center; }
+
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
         }
-        nav a:hover {
-            text-decoration: underline;
-        }
 
-        /* Seções */
+        nav a:hover { text-decoration: underline; }
+
         section {
             padding: 60px 20px;
             max-width: 900px;
             margin: 0 auto;
         }
+
         section h2 {
             text-align: center;
             margin-bottom: 30px;
             color: #007BFF;
         }
 
-        /* Serviços */
         .services {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
         }
+
         .service-card {
             background-color: white;
             padding: 15px;
@@ -69,19 +64,20 @@
             font-size: 0.95em;
             text-align: center;
         }
+
         .service-card img {
             width: 100%;
             border-radius: 8px;
             margin-bottom: 10px;
         }
 
-        /* Galeria */
         .gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
         }
+
         .gallery img {
             width: 200px;
             height: 150px;
@@ -89,7 +85,6 @@
             border-radius: 8px;
         }
 
-        /* Contato */
         .contact a {
             display: inline-block;
             margin-top: 10px;
@@ -100,22 +95,22 @@
             text-decoration: none;
             font-weight: bold;
         }
-        .contact a:hover {
-            background-color: #1ebe5b;
-        }
 
-        /* Formulário */
+        .contact a:hover { background-color: #1ebe5b; }
+
         form {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
+
         input, textarea {
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
             width: 100%;
         }
+
         button {
             padding: 10px;
             background-color: #007BFF;
@@ -125,11 +120,9 @@
             font-weight: bold;
             cursor: pointer;
         }
-        button:hover {
-            background-color: #0056b3;
-        }
 
-        /* Footer */
+        button:hover { background-color: #0056b3; }
+
         footer {
             background-color: #007BFF;
             color: white;
@@ -137,129 +130,152 @@
             padding: 15px;
         }
 
-        /* Responsividade */
         @media (max-width: 600px) {
-            .services {
-                flex-direction: column;
-                align-items: center;
-            }
-            .gallery img {
-                width: 100%;
-                height: auto;
-            }
+            .services { flex-direction: column; align-items: center; }
+            .gallery img { width: 100%; height: auto; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>BJ Eletroinfor BH</h1>
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#galeria">Galeria</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </header>
+<header>
+    <h1>BJ Eletroinfor BH</h1>
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
 
-    <section id="inicio">
-        <h2>Bem-vindo à BJ Eletroinfor BH</h2>
-        <p>Oferecemos serviços rápidos, confiáveis e com preços justos para manter seus equipamentos funcionando como novos. Navegue pelo site para conhecer nossos serviços e entrar em contato conosco.</p>
-    </section>
+<section id="inicio">
+    <h2>Bem-vindo à BJ Eletroinfor BH</h2>
+    <p>Oferecemos serviços rápidos, confiáveis e com preços justos para manter seus equipamentos funcionando como novos. Navegue pelo site para conhecer nossos serviços e entrar em contato conosco.</p>
+</section>
 
-    <section id="servicos">
-        <h2>Serviços Técnicos Especializados</h2>
-        <p>Fazemos manutenção em seu equipamento com total seriedade. Confira nossos principais serviços:</p>
-        <div class="services">
-            <div class="service-card">
-                <img src="img/formatacao.jpg" alt="Formatação Windows">
-                ✅ Formatação de sistema operacional Windows 10 ou Windows 11
-            </div>
-            <div class="service-card">
-                <img src="img/aumento_velocidade.jpg" alt="Aumento de velocidade">
-                ✅ Aumento de velocidade do PC ou notebook com mais memória RAM e/ou HD SSD
-            </div>
-            <div class="service-card">
-                <img src="img/teclado.jpg" alt="Troca de teclado">
-                ✅ Troca de teclado do notebook
-            </div>
-            <div class="service-card">
-                <img src="img/bateria_tela.jpg" alt="Troca de bateria e tela">
-                ✅ Troca de bateria e tela de notebook
-            </div>
-            <div class="service-card">
-                <img src="img/ventoinha.jpg" alt="Troca de ventoinha">
-                ✅ Troca de ventoinha/cooler e fonte ATX para PC
-            </div>
-            <div class="service-card">
-                <img src="img/pasta_termica.jpg" alt="Troca de pasta térmica">
-                ✅ Troca de pasta térmica ressecada do seu PC/notebook
-            </div>
-            <div class="service-card">
-                <img src="img/limpeza.jpg" alt="Limpeza interna">
-                ✅ Limpeza interna em notebooks, PCs e PCs gamer
-            </div>
-            <div class="service-card">
-                <img src="img/caraca_trincada.jpg" alt="Recuperação de carcaça">
-                ✅ Recuperação de carcaça trincada ou quebrada de notebooks
-            </div>
-            <div class="service-card">
-                <img src="img/placa_mae.jpg" alt="Recuperação de placa-mãe">
-                ✅ Recuperação de placa-mãe
-            </div>
-            <div class="service-card">
-                <img src="img/montagem_pc.jpg" alt="Montagem de PC">
-                ✅ Montagem de computador comum ou PC gamer
-            </div>
-            <div class="service-card">
-                <img src="img/instalacao_drivers.jpg" alt="Instalação de drivers">
-                ✅ Instalação de drivers e pacote Office
-            </div>
-            <div class="service-card">
-                <img src="img/reparo_notebook.jpg" alt="Reparo técnico">
-                ✅ Reparo técnico em desktops e notebooks
-            </div>
-            <div class="service-card">
-                <img src="img/rede.jpg" alt="Configuração de rede">
-                ✅ Instalação e configuração de rede TCP/IP
-            </div>
-            <div class="service-card">
-                <img src="img/cftv.jpg" alt="CFTV">
-                ✅ Configuração de câmeras CFTV para acesso externo
-            </div>
-            <div class="service-card">
-                <img src="img/wi-fi.jpg" alt="Roteador e Wi-Fi">
-                ✅ Configuração de roteadores e Wi-Fi
-            </div>
+<section id="servicos">
+    <h2>Serviços Técnicos Especializados</h2>
+    <p>Fazemos manutenção em seu equipamento com total seriedade. Confira nossos principais serviços:</p>
+    <div class="services">
+        
+        <!-- Local image -->
+        <div class="service-card">
+            <img src="img/formatacao.jpg" alt="Formatação Windows">
+            ✅ Formatação de sistema operacional Windows 10 ou Windows 11
         </div>
-    </section>
 
-    <section id="galeria">
-        <h2>Galeria de Fotos</h2>
-        <div class="gallery">
-            <img src="exemplo1.jpg" alt="Serviço 1">
-            <img src="exemplo2.jpg" alt="Serviço 2">
-            <img src="exemplo3.jpg" alt="Serviço 3">
+        <!-- Online image -->
+        <div class="service-card">
+            <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg" alt="Aumento de velocidade">
+            ✅ Aumento de velocidade do PC ou notebook com mais memória RAM e/ou HD SSD
         </div>
-    </section>
 
-    <section id="contato">
-        <h2>Contato</h2>
-        <p>Fale conosco pelo WhatsApp ou preencha o formulário abaixo:</p>
-        <div class="contact">
-            <a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a>
+        <!-- Local -->
+        <div class="service-card">
+            <img src="img/teclado.jpg" alt="Troca de teclado">
+            ✅ Troca de teclado do notebook
         </div>
-        <form action="#" method="post">
-            <input type="text" name="nome" placeholder="Seu nome" required>
-            <input type="email" name="email" placeholder="Seu e-mail" required>
-            <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
 
-    <footer>
-        &copy; 2025 BJ Eletroinfor BH - Todos os direitos reservados
-    </footer>
+        <!-- Online -->
+        <div class="service-card">
+            <img src="https://images.pexels.com/photos/18105/pexels-photo.jpg" alt="Troca de bateria e tela">
+            ✅ Troca de bateria e tela de notebook
+        </div>
+
+        <!-- Local -->
+        <div class="service-card">
+            <img src="img/ventoinha.jpg" alt="Troca de ventoinha">
+            ✅ Troca de ventoinha/cooler e fonte ATX para PC
+        </div>
+
+        <!-- Online -->
+        <div class="service-card">
+            <img src="https://images.pexels.com/photos/4792729/pexels-photo-4792729.jpeg" alt="Troca de pasta térmica">
+            ✅ Troca de pasta térmica ressecada do seu PC/notebook
+        </div>
+
+        <!-- Local -->
+        <div class="service-card">
+            <img src="img/limpeza.jpg" alt="Limpeza interna">
+            ✅ Limpeza interna em notebooks, PCs e PCs gamer
+        </div>
+
+        <!-- Online -->
+        <div class="service-card">
+            <img src="https://images.pexels.com/photos/4792727/pexels-photo-4792727.jpeg" alt="Recuperação carcaça">
+            ✅ Recuperação de carcaça trincada ou quebrada de notebooks
+        </div>
+
+        <!-- Local -->
+        <div class="service-card">
+            <img src="img/placa_mae.jpg" alt="Recuperação de placa-mãe">
+            ✅ Recuperação de placa-mãe
+        </div>
+
+        <!-- Online -->
+        <div class="service-card">
+            <img src="https://images.pexels.com/photos/4792726/pexels-photo-4792726.jpeg" alt="Montagem PC">
+            ✅ Montagem de computador comum ou PC gamer
+        </div>
+
+        <!-- Local -->
+        <div class="service-card">
+            <img src="img/drivers.jpg" alt="Instalação de drivers">
+            ✅ Instalação de drivers e pacote Office
+        </div>
+
+        <!-- Online -->
+        <div class="service-card">
+            <img src="https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg" alt="Reparo técnico">
+            ✅ Reparo técnico em desktops e notebooks
+        </div>
+
+        <!-- Local -->
+        <div class="service-card">
+            <img src="img/rede.jpg" alt="Configuração de rede">
+            ✅ Instalação e configuração de rede TCP/IP
+        </div>
+
+        <!-- Online -->
+        <div class="service-card">
+            <img src="https://images.pexels.com/photos/68763/pexels-photo-68763.jpeg" alt="CFTV">
+            ✅ Configuração de câmeras CFTV para acesso externo
+        </div>
+
+        <!-- Local -->
+        <div class="service-card">
+            <img src="img/wifi.jpg" alt="Roteador e Wi-Fi">
+            ✅ Configuração de roteadores e Wi-Fi
+        </div>
+    </div>
+</section>
+
+<section id="galeria">
+    <h2>Galeria de Fotos</h2>
+    <div class="gallery">
+        <img src="img/galeria1.jpg" alt="Serviço 1">
+        <img src="https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg" alt="Serviço 2">
+        <img src="img/galeria3.jpg" alt="Serviço 3">
+    </div>
+</section>
+
+<section id="contato">
+    <h2>Contato</h2>
+    <p>Fale conosco pelo WhatsApp ou preencha o formulário abaixo:</p>
+    <div class="contact">
+        <a href="https://wa.me/5531999999999" target="_blank">WhatsApp</a>
+    </div>
+    <form action="#" method="post">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<footer>
+    &copy; 2025 BJ Eletroinfor BH - Todos os direitos reservados
+</footer>
 
 </body>
 </html>
