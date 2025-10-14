@@ -5,33 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BJ Eletroinfor BH - Assistência Técnica</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { background-color: #007BFF; color: white; padding: 40px 20px; text-align: center; }
-    header h1 { margin: 0; font-size: 2.2em; }
-    header p { margin-top: 10px; font-size: 1.1em; }
-    nav { text-align: center; margin-top: 15px; }
-    nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    section { padding: 60px 20px; max-width: 900px; margin: 0 auto; }
-    section h2 { text-align: center; margin-bottom: 30px; color: #007BFF; }
-    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .service { background: white; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); overflow: hidden; text-align: center; transition: transform 0.2s; }
-    .service:hover { transform: scale(1.03); }
-    .service img { width: 100%; height: 180px; object-fit: cover; }
-    .service h3 { margin: 15px 0 5px; color: #007BFF; }
-    .service p { padding: 0 15px 20px; font-size: 0.95em; color: #555; }
-    .gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px; }
-    .gallery img { width: 200px; height: 150px; object-fit: cover; border-radius: 8px; transition: transform 0.2s; }
-    .gallery img:hover { transform: scale(1.05); }
-    .contact { text-align: center; margin-top: 20px; }
-    .contact a { display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: #25D366; color: white; border-radius: 5px; text-decoration: none; font-weight: bold; }
-    .contact a:hover { background-color: #1ebe5b; }
-    form { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
-    input, textarea { padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 100%; }
-    button { padding: 10px; background-color: #007BFF; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
-    button:hover { background-color: #0056b3; }
-    footer { background-color: #007BFF; color: white; text-align: center; padding: 15px; margin-top: 40px; }
-    @media (max-width: 600px) { .services { grid-template-columns: 1fr; } .gallery img { width: 100%; height: auto; } }
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; color:#333; }
+    header { background:#007BFF; color:white; padding:40px 20px; text-align:center; }
+    header h1 { margin:0; font-size:2.2em; }
+    header p { margin-top:10px; font-size:1.1em; }
+    nav { text-align:center; margin-top:15px; }
+    nav a { color:white; text-decoration:none; margin:0 15px; font-weight:bold; }
+    nav a:hover { text-decoration:underline; }
+    section { padding:60px 20px; max-width:900px; margin:0 auto; }
+    section h2 { text-align:center; margin-bottom:30px; color:#007BFF; }
+    .services { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px; }
+    .service { background:white; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); overflow:hidden; text-align:center; transition:transform 0.2s; }
+    .service:hover { transform:scale(1.03); }
+    .service img { width:100%; height:180px; object-fit:cover; }
+    .service h3 { margin:15px 0 5px; color:#007BFF; }
+    .service p { padding:0 15px 20px; font-size:0.95em; color:#555; }
+    .gallery { display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin-top:30px; }
+    .gallery img { width:200px; height:150px; object-fit:cover; border-radius:8px; transition:transform 0.2s; }
+    .gallery img:hover { transform:scale(1.05); }
+    .contact { text-align:center; margin-top:20px; }
+    .contact a { display:inline-block; margin-top:10px; padding:10px 20px; background:#25D366; color:white; border-radius:5px; text-decoration:none; font-weight:bold; }
+    .contact a:hover { background:#1ebe5b; }
+    footer { background:#007BFF; color:white; text-align:center; padding:15px; margin-top:40px; }
+    @media(max-width:600px){ .services{ grid-template-columns:1fr; } .gallery img{ width:100%; height:auto; } }
   </style>
 </head>
 <body>
@@ -56,63 +52,67 @@
   <h2>Serviços Técnicos Especializados</h2>
   <p>Fazemos manutenção em seu equipamento com total seriedade. Confira nossos principais serviços:</p>
   <div class="services">
-    <!-- Local -->
     <div class="service">
       <img src="img/formatacao.jpg" alt="Formatação de sistema operacional">
       <h3>Formatação Windows 10/11</h3>
       <p>Formatação completa e instalação de drivers e programas essenciais.</p>
     </div>
-    <!-- Online -->
     <div class="service">
       <img src="https://cdn.pixabay.com/photo/2017/03/31/18/34/ssd-2198501_1280.jpg" alt="SSD e desempenho">
       <h3>Aumento de Velocidade (RAM/SSD)</h3>
       <p>Deixe seu PC ou notebook mais rápido com upgrade de memória ou SSD.</p>
     </div>
-    <!-- Local -->
     <div class="service">
       <img src="img/teclado.jpg" alt="Troca de teclado de notebook">
       <h3>Troca de Teclado</h3>
       <p>Substituição segura e precisa do teclado danificado do notebook.</p>
     </div>
-    <!-- Online -->
     <div class="service">
       <img src="https://cdn.pixabay.com/photo/2015/01/08/18/26/battery-593136_1280.jpg" alt="Troca de bateria e tela">
       <h3>Bateria e Tela de Notebook</h3>
       <p>Troca de bateria e tela com peças de qualidade e garantia de serviço.</p>
     </div>
-  </div>
-</section>
+    <div class="service">
+      <img src="img/cooler.jpg" alt="Troca de ventoinha e fonte ATX">
+      <h3>Ventoinha / Fonte ATX</h3>
+      <p>Substituímos ventoinhas e fontes defeituosas em PCs de mesa.</p>
+    </div>
+    <div class="service">
+      <img src="https://cdn.pixabay.com/photo/2017/06/08/00/10/computer-2381186_1280.jpg" alt="Troca de pasta térmica e limpeza">
+      <h3>Limpeza Interna e Pasta Térmica</h3>
+      <p>Remoção de poeira e troca de pasta térmica para melhor refrigeração.</p>
+    </div>
+    <div class="service">
+      <img src="img/carcaca.jpg" alt="Recuperação de carcaça de notebook">
+      <h3>Recuperação de Carcaça</h3>
+      <p>Reparos em carcaças trincadas ou quebradas, devolvendo firmeza e estética.</p>
+    </div>
+    <div class="service">
+      <img src="https://cdn.pixabay.com/photo/2015/01/08/18/26/motherboard-593149_1280.jpg" alt="Recuperação de placa-mãe">
+      <h3>Recuperação de Placa-mãe</h3>
+      <p>Diagnóstico e reparo em placas-mãe de notebooks e desktops.</p>
+    </div>
+    <div class="service">
+      <img src="img/montagem.jpg" alt="Montagem de computador comum ou PC Gamer">
+      <h3>Montagem de PC</h3>
+      <p>Montagem profissional de computadores pessoais e gamers.</p>
+    </div>
+    <div class="service">
+      <img src="https://cdn.pixabay.com/photo/2016/03/31/20/17/office-1295366_1280.png" alt="Instalação de drivers e Office">
+      <h3>Instalação de Drivers e Office</h3>
+      <p>Instalação completa de drivers e pacote Office original ou alternativo.</p>
+    </div>
+    <div class="service">
+      <img src="img/reparo.jpg" alt="Reparo técnico">
+      <h3>Reparo Técnico</h3>
+      <p>Manutenção e reparo técnico em notebooks e desktops.</p>
+    </div>
+    <div class="service">
+      <img src="https://cdn.pixabay.com/photo/2018/01/03/09/09/network-3051906_1280.jpg" alt="Configuração de rede TCP/IP">
+      <h3>Instalação e Configuração de Rede</h3>
+      <p>Instalação e configuração de redes cabeadas e Wi-Fi.</p>
+    </div>
+    <div class="service">
+      <img src="img/c
 
-<section id="galeria">
-  <h2>Galeria de Fotos de Serviços</h2>
-  <p>Aqui você confere alguns dos trabalhos que já realizamos:</p>
-  <div class="gallery">
-    <img src="img/galeria1.jpg" alt="Serviço 1">
-    <img src="https://cdn.pixabay.com/photo/2015/01/08/18/26/motherboard-593149_1280.jpg" alt="Serviço 2">
-    <img src="img/galeria3.jpg" alt="Serviço 3">
-    <img src="https://cdn.pixabay.com/photo/2017/06/08/00/10/computer-2381186_1280.jpg" alt="Serviço 4">
-    <img src="img/galeria5.jpg" alt="Serviço 5">
-    <img src="https://cdn.pixabay.com/photo/2018/01/03/09/09/network-3051906_1280.jpg" alt="Serviço 6">
-  </div>
-</section>
-
-<section id="contato">
-  <h2>Contato</h2>
-  <p>Fale conosco diretamente pelo WhatsApp ou envie uma mensagem pelo formulário:</p>
-  <div class="contact">
-    <a href="https://wa.me/5531998116093" target="_blank">📱 Clique aqui para falar pelo WhatsApp: 31 99811-6093</a>
-  </div>
-  <form action="#" method="post">
-    <input type="text" name="nome" placeholder="Seu nome" required>
-    <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
-    <button type="submit">Enviar</button>
-  </form>
-</section>
-
-<footer>
-  &copy; 2025 BJ Eletroinfor BH - Todos os direitos reservados
-</footer>
-
-</body>
-</html>
 
