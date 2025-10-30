@@ -1,255 +1,271 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BJ Eletroinfor-BH - Assistência Técnica</title>
-    <style>
-        /* Reset básico */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="BJ Eletroinfor BH - Assistência técnica em notebooks, PCs, impressoras e redes em Belo Horizonte." />
+    <meta name="keywords" content="assistência técnica, notebook, PC, formatação, Belo Horizonte, BH" />
+    <meta name="author" content="BJ Eletroinfor BH" />
+    <meta name="theme-color" content="#007BFF" />
+    <title>BJ Eletroinfor BH - Assistência Técnica</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f9f9f9;
-            color: #333;
+    <style>
+        :root {
+            --primary: #007BFF;
+            --primary-dark: #0056b3;
+            --success: #25D366;
+            --success-dark: #1ebe5b;
+            --light: #f9f9f9;
+            --dark: #333;
+            --gray: #ccc;
+            --radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
 
-        /* Header e Menu */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Arial, sans-serif; line-height: 1.7; background: var(--light); color: var(--dark); scroll-behavior: smooth; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; transition: var(--transition); }
+
+        /* HEADER */
         header {
-            background-color: #007BFF;
+            background: var(--primary);
             color: white;
-            padding: 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: var(--shadow);
         }
-        header h1 {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        nav {
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        /* Seções */
-        section {
-            padding: 60px 20px;
-            max-width: 900px;
+        .header-container {
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
+        .header-left { flex: 1; text-align: center; }
+        header h1 { font-size: clamp(1.5rem, 5vw, 1.8rem); font-weight: 700; margin-bottom: 0.5rem; }
+        nav ul {
+            display: flex; justify-content: center; gap: 1rem; list-style: none; flex-wrap: wrap;
+            margin-top: 0.5rem; font-size: 0.95rem;
+        }
+        nav a { padding: 0.5rem 0.8rem; font-weight: 600; border-radius: 6px; }
+        nav a:hover { background: rgba(255,255,255,0.2); }
+
+        .header-right { display: flex; align-items: center; gap: 0.5rem; }
+        .zap-link {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            background: rgba(255,255,255,0.2); color: white;
+            padding: 0.6rem 1rem; border-radius: 20px; font-weight: 600; font-size: 0.95rem;
+        }
+        .zap-link:hover { background: rgba(255,255,255,0.3); }
+
+        .whatsapp-icon { width: 20px; height: 20px; fill: currentColor; }
+
+        /* MAIN */
+        main { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+        section { margin-bottom: 3.5rem; }
         section h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #007BFF;
+            text-align: center; color: var(--primary);
+            font-size: clamp(1.6rem, 5vw, 1.9rem); margin-bottom: 1.5rem;
+        }
+        section h2::after {
+            content: ''; width: 60px; height: 4px; background: var(--primary);
+            display: block; margin: 0.8rem auto 0; border-radius: 2px;
         }
 
-        /* Serviços */
+        /* SERVIÇOS */
         .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem; margin-top: 1.5rem;
         }
         .service-card {
-            background-color: white;
-            padding: 15px;
-            border-radius: 10px;
-            width: 260px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            font-size: 0.95em;
-            text-align: center;
+            background: white; border-radius: var(--radius); overflow: hidden;
+            box-shadow: var(--shadow); text-align: center; transition: var(--transition);
         }
+        .service-card:hover { transform: translateY(-6px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
         .service-card img {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 10px;
+            width: 100%; height: 160px; object-fit: cover;
+            border-bottom: 4px solid var(--primary); background: #eee;
         }
+        .service-card p {
+            padding: 1rem; font-size: 0.95rem; font-weight: 500;
+        }
+        .service-card p::before { content: 'Check'; margin-right: 0.5rem; color: var(--success); }
 
-        /* Galeria */
+        /* GALERIA */
         .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem; margin-top: 1.5rem;
         }
         .gallery img {
-            width: 200px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
+            width: 100%; height: 140px; object-fit: cover;
+            border-radius: var(--radius); box-shadow: var(--shadow); transition: var(--transition);
+        }
+        .gallery img:hover { transform: scale(1.05); }
+
+        /* CONTATO */
+        .contact-info { text-align: center; margin-bottom: 1.8rem; font-size: 1.1rem; }
+        .whatsapp-btn {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            background: var(--success); color: white; padding: 0.9rem 1.8rem;
+            border-radius: 50px; font-weight: 600; font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(37,211,102,0.3); margin: 0 auto; justify-content: center;
+        }
+        .whatsapp-btn:hover { background: var(--success-dark); transform: translateY(-3px); }
+
+        /* CARTÃO DIGITAL */
+        .digital-card {
+            background: linear-gradient(135deg, #007BFF, #00c6ff);
+            color: white; padding: 2rem; border-radius: var(--radius);
+            text-align: center; margin: 2rem 0;
+        }
+        .digital-card h3 { margin-bottom: 1rem; font-size: 1.5rem; }
+        .digital-card a {
+            display: inline-block; background: white; color: var(--primary);
+            padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: 600; margin: 0.5rem;
         }
 
-        /* Contato */
-        .contact a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
+        /* BOTÃO FLUTUANTE */
+        .whatsapp-float {
+            position: fixed; bottom: 20px; right: 20px;
+            background: var(--success); width: 60px; height: 60px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000;
+            animation: pulse 2s infinite;
         }
-        .contact a:hover {
-            background-color: #1ebe5b;
-        }
-
-        /* Formulário */
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        input, textarea {
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            width: 100%;
-        }
-        button {
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
+        .whatsapp-float:hover { transform: scale(1.1); }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
         }
 
-        /* Footer */
+        /* FOOTER */
         footer {
-            background-color: #007BFF;
-            color: white;
-            text-align: center;
-            padding: 15px;
+            background: var(--primary); color: white; text-align: center;
+            padding: 1.5rem; font-size: 0.95rem; margin-top: 3rem;
         }
 
-        /* Responsividade */
-        @media (max-width: 600px) {
-            .services {
-                flex-direction: column;
-                align-items: center;
-            }
-            .gallery img {
-                width: 100%;
-                height: auto;
-            }
+        /* RESPONSIVO */
+        @media (max-width: 480px) {
+            .header-container { flex-direction: column; text-align: center; }
+            .header-right { order: -1; width: 100%; justify-content: center; }
+            nav ul { gap: 0.8rem; font-size: 0.9rem; }
+            main { padding: 1rem; }
+            .services, .gallery { grid-template-columns: 1fr; }
+            .gallery img { height: 180px; }
+            .whatsapp-btn { font-size: 1rem; padding: 0.8rem 1.5rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- HEADER -->
     <header>
-        <h1>BJ Eletroinfor BH</h1>
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#galeria">Galeria</a>
-            <a href="#contato">Contato</a>
-        </nav>
+        <div class="header-container">
+            <div class="header-left">
+                <h1>BJ Eletroinfor BH</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#galeria">Galeria</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-right">
+                <a href="https://wa.me/5531998116093?text=Olá!%20Vim%20pelo%20site." class="zap-link" target="_blank" rel="noopener">
+                    <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 5.044h-.004c-.673 0-1.334-.165-1.918-.484l-.137-.081-3.75.984 1.001-3.645-.235-.374c-.597-.947-1.026-2.047-1.026-3.259 0-3.376 2.754-6.117 6.151-6.117 1.644 0 3.187.638 4.345 1.795 1.158 1.157 1.795 2.7 1.795 4.345 0 3.376-2.754 6.117-6.151 6.117m5.421-11.087c-1.392-1.392-3.239-2.159-5.207-2.159-4.058 0-7.359 3.301-7.359 7.359 0 1.297.344 2.566 1.001 3.674l-1.074 3.91 4.012-1.052c1.048.575 2.235.88 3.421.88 4.058 0 7.359-3.301 7.359-7.359 0-1.968-.767-3.815-2.159-5.207"/>
+                    </svg>
+                    (31) 99811-6093
+                </a>
+            </div>
+        </div>
     </header>
 
-    <section id="inicio">
-        <h2>Bem-vindo à BJ Eletroinfor BH</h2>
-        <p>Oferecemos serviços rápidos, confiáveis e com preços justos para manter seus equipamentos funcionando como novos. Navegue pelo site para conhecer nossos serviços e entrar em contato conosco.</p>
-    </section>
+    <main>
+        <!-- INÍCIO -->
+        <section id="inicio">
+            <h2>Bem-vindo à BJ Eletroinfor BH</h2>
+            <p style="text-align:center; max-width:800px; margin:0 auto;">
+                Serviços rápidos, confiáveis e com preços justos em notebooks, PCs e redes.
+            </p>
+        </section>
 
-    <section id="servicos">
-        <h2>Serviços Técnicos Especializados</h2>
-        <p>Fazemos manutenção em seu equipamento com total seriedade. Confira nossos principais serviços:</p>
-        <div class="services">
-            <div class="service-card">
-                <img src="imagens/formatacao.jpg" alt="Formatação Windows">
-                ✅ Formatação de sistema operacional Windows 10 ou Windows 11
+        <!-- SERVIÇOS -->
+        <section id="servicos">
+            <h2>Serviços Técnicos</h2>
+            <p style="text-align:center; margin-bottom:1.5rem;">Confira o que fazemos. Faça seu orçamento sem compromisso:</p>
+            <div class="services">
+                <div class="service-card"><img src="imagem/formatacao.jpg" alt="Formatação"><p>Formatação Windows 10/11</p></div>
+                <div class="service-card"><img src="imagem/carcaça.jpg" alt="Resinagem"><p>Resinagem de carcaça quebrada</p></div>
+                <div class="service-card"><img src="imagem/teclado.jpg" alt="Teclado"><p>Troca de teclado</p></div>
+                <div class="service-card"><img src="imagem/bateria.jpg" alt="Bateria"><p>Troca de bateria</p></div>
+                <div class="service-card"><img src="imagem/impressora.jpg" alt="Impressora"><p>Manutenção em impressora</p></div>
+                <div class="service-card"><img src="imagem/limpeza-pc.jpg" alt="Limpeza"><p>Limpeza interna</p></div>
+                <div class="service-card"><img src="imagem/caraca-trincada.jpg" alt="Carcaça"><p>Troque sua tela quebrada.</p></div>
+                <div class="service-card"><img src="imagem/montagem-pc-gamer.jpg" alt="Placa-mãe"><p>Monte seu PC Gamer conosco.</p></div>
+                <div class="service-card"><img src="imagem/montagem-pc-gamer.jpg" alt="PC"><p>Montagem de PC gamer</p></div>
+                <div class="service-card"><img src="imagem/placa-mae.jpg" alt="PC"><p>PC lento? faça o upgrade de PC</p></div>
+                <div class="service-card"><img src="imagem/reparo_notebook.jpg" alt="Reparo"><p>Reparo técnico</p></div>
+                <div class="service-card"><img src="imagem/rede.jpg" alt="Rede"><p>Configuração de rede</p></div>
+                <div class="service-card"><img src="imagem/cftv.jpg" alt="CFTV"><p>Configuração de CFTV</p></div>
             </div>
-            <div class="service-card">
-                <img src="imagens/carcaça.jpg" alt="Resinagem de carcaça de note">
-                ✅ Recuperação de carcaça trincada ou quebrada de notebooks - resinagem 
-            </div>
-            <div class="service-card">
-                <img src="imagens/teclado.jpg" alt="Troca de teclado">
-                ✅ Troca de teclado do notebook
-            </div>
-            <div class="service-card">
-                <img src="imagens/trocabateria.jpg" alt="Troca de bateria e tela">
-                ✅ Troca de bateria  de notebook
-            </div>
-            
-            <div class="service-card">
-                <img src="imagens/impressora.jpg" alt="Manutenacao em impressora">
-                ✅ Manutençao em impressora
-            </div>
-            <div class="service-card">
-                <img src="imagens/limpeza-pc.jpg" alt="Limpeza interna">
-                ✅ Limpeza interna em notebooks, PCs e PCs gamer
-            </div>
-            <div class="service-card">
-                <img src="imagens/tela_trincada.jpg" alt="Recuperação de carcaça">
-                ✅ Trocamos sua tela de notebook
-            </div>
-            <div class="service-card">
-                <img src="imagens/microndas.jpg" alt="Manutençao de microondas">
-                ✅ Concertamos seu microondas, faça um orçamento.
-            </div>
-            <div class="service-card">
-                <img src="imagens/montagemPC.jpg" alt="Montagem de PC">
-                ✅ Montagem de computador comum ou PC gamer
-            </div>
-            <div class="service-card">
-                <img src="imagens/reparonote.jpg" alt="Reparo técnico">
-                ✅ Reparo técnico em desktops e notebooks
-            </div>
-            <div class="service-card">
-                <img src="imagens/rede.jpg" alt="Configuração de rede">
-                ✅ Instalação e configuração de rede TCP/IP
-            </div>
-            <div class="service-card">
-                <img src="imagens/cftv.jpg" alt="CFTV">
-                ✅ Venda , instalaçao e configuraçao do sistema de segurança CFTV.
-            </div>
-             <div class="service-card">
-                <img src="imagens/cerca-eletrica.jpg" alt="Cerca">
-                ✅ Instalamos cercas eletricas, faça orçamento com a gente! 
-            </div>
-    </section>
+        </section>
 
-    <section id="galeria">
-        <h2>Galeria de Fotos</h2>
-        <div class="gallery">
-            <img src="exemplo1.jpg" alt="Serviço 1">
-            <img src="exemplo2.jpg" alt="Serviço 2">
-            <img src="exemplo3.jpg" alt="Serviço 3">
-        </div>
-    </section>
+        <!-- GALERIA -->
+        <section id="galeria">
+            <h2>Galeria</h2>
+            <div class="gallery">
+                <img src="exemplo1.jpg" alt="Serviço 1">
+                <img src="exemplo2.jpg" alt="Serviço 2">
+                <img src="exemplo3.jpg" alt="Serviço 3">
+            </div>
+        </section>
 
-    <section id="contato">
-        <h2>Contato</h2>
-        <p>Fale conosco de DOMINGO a SEXTA pelo WhatsApp 31 998116093:</p>
-        <p>Rua Sulferino Bairro Vitoria, Belo horizonte - MG:</p>
-        <div class="contact">
-            <a href="https://wa.me/5531998116093" target="_blank">WhatsApp 31998116093</a>
-        </div>
-        
+        <!-- CARTÃO DIGITAL -->
+        <section id="cartao">
+            <div class="digital-card">
+                <h3>Cartão Digital</h3>
+                <p>Salve ou compartilhe!</p>
+                <a href="https://wa.me/5531998116093" target="_blank">WhatsApp</a>
+                <a href="https://maps.google.com/?q=Rua+Sulferino,+Bairro+Vitória,+Belo+Horizonte" target="_blank">Como Chegar</a>
+                <a href="tel:+5531998116093">Ligar</a>
+            </div>
+        </section>
 
-        </form>
-    </section>
+        <!-- CONTATO -->
+        <section id="contato">
+            <h2>Contato</h2>
+            <div class="contact-info">
+                <p><strong>WhatsApp:</strong> (31) 99811-6093</p>
+                <p><strong>Endereço:</strong> Rua Sulferino, Bairro Vitória, BH</p>
+            </div>
+            <a href="https://wa.me/5531998116093?text=Olá!%20Quero%20um%20orçamento." class="whatsapp-btn" target="_blank" rel="noopener">
+                <svg class="whatsapp-icon" viewBox="0 0 24 24" style="width:24px;height:24px;">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 5.044h-.004c-.673 0-1.334-.165-1.918-.484l-.137-.081-3.75.984 1.001-3.645-.235-.374c-.597-.947-1.026-2.047-1.026-3.259 0-3.376 2.754-6.117 6.151-6.117 1.644 0 3.187.638 4.345 1.795 1.158 1.157 1.795 2.7 1.795 4.345 0 3.376-2.754 6.117-6.151 6.117m5.421-11.087c-1.392-1.392-3.239-2.159-5.207-2.159-4.058 0-7.359 3.301-7.359 7.359 0 1.297.344 2.566 1.001 3.674l-1.074 3.91 4.012-1.052c1.048.575 2.235.88 3.421.88 4.058 0 7.359-3.301 7.359-7.359 0-1.968-.767-3.815-2.159-5.207"/>
+                </svg>
+                Falar no WhatsApp
+            </a>
+        </section>
+    </main>
 
-    <footer>
-        &copy; Nao jogue seu equipameno ou eletrodomestico no lixo. Fazemos o descarte conciente,
-    </footer>
+    <!-- BOTÃO FLUTUANTE -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/5531998116093?text=Olá!%20Quero%20um%20orçamento." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 5.044h-.004c-.673 0-1.334-.165-1.918-.484l-.137-.081-3.75.984 1.001-3.645-.235-.374c-.597-.947-1.026-2.047-1.026-3.259 0-3.376 2.754-6.117 6.151-6.117 1.644 0 3.187.638 4.345 1.795 1.158 1.157 1.795 2.7 1.795 4.345 0 3.376-2.754 6.117-6.151 6.117m5.421-11.087c-1.392-1.392-3.239-2.159-5.207-2.159-4.058 0-7.359 3.301-7.359 7.359 0 1.297.344 2.566 1.001 3.674l-1.074 3.91 4.012-1.052c1.048.575 2.235.88 3.421.88 4.058 0 7.359-3.301 7.359-7.359 0-1.968-.767-3.815-2.159-5.207"/>
+            </svg>
+        </a>
+    </div>
 
+    <footer>© BJ Eletroinfor BH | Descarte consciente de equipamentos.</footer>
 </body>
 </html>
