@@ -110,13 +110,7 @@
 
         /* CONTATO */
         .contact-info { text-align: center; margin-bottom: 1.8rem; font-size: 1.1rem; }
-        .whatsapp-btn {
-            display: inline-flex; align-items: center; gap: 0.6rem;
-            background: var(--success); color: white; padding: 0.9rem 1.8rem;
-            border-radius: 50px; font-weight: 600; font-size: 1.1rem;
-            box-shadow: 0 4px 12px rgba(37,211,102,0.3); margin: 0 auto; justify-content: center;
-        }
-        .whatsapp-btn:hover { background: var(--success-dark); transform: translateY(-3px); }
+        .whatsapp-btn { display: none; } /* REMOVIDO */
 
         /* CARTÃO DIGITAL */
         .digital-card {
@@ -130,15 +124,24 @@
             padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: 600; margin: 0.5rem;
         }
 
-        /* BOTÃO FLUTUANTE */
-        .whatsapp-float {
-            position: fixed; bottom: 20px; right: 20px;
-            background: var(--success); width: 60px; height: 60px;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000;
-            animation: pulse 2s infinite;
+        /* BOTÃO WHATSAPP CENTRALIZADO ( antigamente flutuante ) */
+        .whatsapp-center {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
         }
-        .whatsapp-float:hover { transform: scale(1.1); }
+        .whatsapp-center a {
+            background: var(--success);
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
+            transition: var(--transition);
+        }
+        .whatsapp-center a:hover {
+            transform: scale(1.1);
+        }
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
             70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
@@ -159,7 +162,15 @@
             main { padding: 1rem; }
             .services, .gallery { grid-template-columns: 1fr; }
             .gallery img { height: 180px; }
-            .whatsapp-btn { font-size: 1rem; padding: 0.8rem 1.5rem; }
+        }
+
+        /* TELAS MUITO PEQUENAS */
+        @media (max-width: 320px) {
+            header h1 { font-size: 1.4rem; }
+            nav ul { flex-direction: column; align-items: center; gap: 0; }
+            nav ul li { width: 100%; text-align: center; }
+            nav a { display: block; padding: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.2); border-radius: 0; }
+            nav a:last-child { border-bottom: none; }
         }
     </style>
 </head>
@@ -204,18 +215,19 @@
             <h2>Serviços Técnicos</h2>
             <p style="text-align:center; margin-bottom:1.5rem;">Confira o que fazemos. Faça seu orçamento sem compromisso:</p>
             <div class="services">
-                <div class="service-card"><img src="imagens/formatacao.jpg" alt="Formatação"><p>Formatação Windows 10/11</p></div>
-                <div class="service-card"><img src="imagens/carcaça.jpg" alt="Resinagem"><p>Resinagem de carcaça quebrada</p></div>
-                <div class="service-card"><img src="imagens/teclado.jpg" alt="Teclado"><p>Troca de teclado</p></div>
-                <div class="service-card"><img src="imagens/bateria.jpg" alt="Bateria"><p>Troca de bateria</p></div>
-                <div class="service-card"><img src="imagens/impressora.jpg" alt="Impressora"><p>Manutenção em impressora</p></div>
-                <div class="service-card"><img src="imagens/limpeza-pc.jpg" alt="Limpeza"><p>Limpeza interna</p></div>
-                <div class="service-card"><img src="imagens/tela_trincada.jpg" alt="Carcaça"><p>Troque sua tela quebrada.</p></div>
-                <div class="service-card"><img src="imagens/montagem-pc-gamer.jpg" alt="Placa-mãe"><p>Monte seu PC Gamer conosco.</p></div>
-                <div class="service-card"><img src="imagens/placa-mae.jpg" alt="PC"><p>PC lento? faça o upgrade de PC</p></div>
-                <div class="service-card"><img src="imagens/reparo_notebook.jpg" alt="Reparo"><p>Reparo técnico</p></div>
-                <div class="service-card"><img src="imagens/rede.jpg" alt="Rede"><p>Configuração de rede</p></div>
-                <div class="service-card"><img src="imagens/cftv.jpg" alt="CFTV"><p>Configuração de CFTV</p></div>
+                <div class="service-card"><img src="imagem/formatacao.jpg" alt="Formatação"><p>Formatação Windows 10/11</p></div>
+                <div class="service-card"><img src="imagem/carcaça.jpg" alt="Resinagem"><p>Resinagem de carcaça quebrada</p></div>
+                <div class="service-card"><img src="imagem/teclado.jpg" alt="Teclado"><p>Troca de teclado</p></div>
+                <div class="service-card"><img src="imagem/bateria.jpg" alt="Bateria"><p>Troca de bateria</p></div>
+                <div class="service-card"><img src="imagem/impressora.jpg" alt="Impressora"><p>Manutenção em impressora</p></div>
+                <div class="service-card"><img src="imagem/limpeza-pc.jpg" alt="Limpeza"><p>Limpeza interna</p></div>
+                <div class="service-card"><img src="imagem/caraca-trincada.jpg" alt="Carcaça"><p>Troque sua tela quebrada.</p></div>
+                <div class="service-card"><img src="imagem/montagem-pc-gamer.jpg" alt="Placa-mãe"><p>Monte seu PC Gamer conosco.</p></div>
+                <div class="service-card"><img src="imagem/montagem-pc-gamer.jpg" alt="PC"><p>Montagem de PC gamer</p></div>
+                <div class="service-card"><img src="imagem/placa-mae.jpg" alt="PC"><p>PC lento? faça o upgrade de PC</p></div>
+                <div class="service-card"><img src="imagem/reparo_notebook.jpg" alt="Reparo"><p>Reparo técnico</p></div>
+                <div class="service-card"><img src="imagem/rede.jpg" alt="Rede"><p>Configuração de rede</p></div>
+                <div class="service-card"><img src="imagem/cftv.jpg" alt="CFTV"><p>Configuração de CFTV</p></div>
             </div>
         </section>
 
@@ -247,23 +259,17 @@
                 <p><strong>WhatsApp:</strong> (31) 99811-6093</p>
                 <p><strong>Endereço:</strong> Rua Sulferino, Bairro Vitória, BH</p>
             </div>
-            <a href="https://wa.me/5531998116093?text=Olá!%20Quero%20um%20orçamento." class="whatsapp-btn" target="_blank" rel="noopener">
-                <svg class="whatsapp-icon" viewBox="0 0 24 24" style="width:24px;height:24px;">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 5.044h-.004c-.673 0-1.334-.165-1.918-.484l-.137-.081-3.75.984 1.001-3.645-.235-.374c-.597-.947-1.026-2.047-1.026-3.259 0-3.376 2.754-6.117 6.151-6.117 1.644 0 3.187.638 4.345 1.795 1.158 1.157 1.795 2.7 1.795 4.345 0 3.376-2.754 6.117-6.151 6.117m5.421-11.087c-1.392-1.392-3.239-2.159-5.207-2.159-4.058 0-7.359 3.301-7.359 7.359 0 1.297.344 2.566 1.001 3.674l-1.074 3.91 4.012-1.052c1.048.575 2.235.88 3.421.88 4.058 0 7.359-3.301 7.359-7.359 0-1.968-.767-3.815-2.159-5.207"/>
-                </svg>
-                Falar no WhatsApp
-            </a>
+
+            <!-- BOTÃO WHATSAPP CENTRALIZADO -->
+            <div class="whatsapp-center">
+                <a href="https://wa.me/5531998116093?text=Olá!%20Quero%20um%20orçamento." target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" width="30" height="30" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 5.044h-.004c-.673 0-1.334-.165-1.918-.484l-.137-.081-3.75.984 1.001-3.645-.235-.374c-.597-.947-1.026-2.047-1.026-3.259 0-3.376 2.754-6.117 6.151-6.117 1.644 0 3.187.638 4.345 1.795 1.158 1.157 1.795 2.7 1.795 4.345 0 3.376-2.754 6.117-6.151 6.117m5.421-11.087c-1.392-1.392-3.239-2.159-5.207-2.159-4.058 0-7.359 3.301-7.359 7.359 0 1.297.344 2.566 1.001 3.674l-1.074 3.91 4.012-1.052c1.048.575 2.235.88 3.421.88 4.058 0 7.359-3.301 7.359-7.359 0-1.968-.767-3.815-2.159-5.207"/>
+                    </svg>
+                </a>
+            </div>
         </section>
     </main>
-
-    <!-- BOTÃO FLUTUANTE -->
-    <div class="whatsapp-float">
-        <a href="https://wa.me/5531998116093?text=Olá!%20Quero%20um%20orçamento." target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" width="30" height="30" fill="white" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 5.044h-.004c-.673 0-1.334-.165-1.918-.484l-.137-.081-3.75.984 1.001-3.645-.235-.374c-.597-.947-1.026-2.047-1.026-3.259 0-3.376 2.754-6.117 6.151-6.117 1.644 0 3.187.638 4.345 1.795 1.158 1.157 1.795 2.7 1.795 4.345 0 3.376-2.754 6.117-6.151 6.117m5.421-11.087c-1.392-1.392-3.239-2.159-5.207-2.159-4.058 0-7.359 3.301-7.359 7.359 0 1.297.344 2.566 1.001 3.674l-1.074 3.91 4.012-1.052c1.048.575 2.235.88 3.421.88 4.058 0 7.359-3.301 7.359-7.359 0-1.968-.767-3.815-2.159-5.207"/>
-            </svg>
-        </a>
-    </div>
 
     <footer>© BJ Eletroinfor BH | Descarte consciente de equipamentos.</footer>
 </body>
