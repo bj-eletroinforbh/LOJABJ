@@ -48,7 +48,7 @@
             gap: 1rem;
         }
         .header-left { flex: 1; text-align: center; }
-        header h1 { font-size: clamp(1.5rem, 5vw, 1.8rem); font-weight: 700; margin-bottom: 0.5rem; }
+        header h1 { font-size: clamp(1.4rem, 4.5vw, 1.7rem); font-weight: 700; margin-bottom: 0.5rem; line-height: 1.3; }
         nav ul {
             display: flex; justify-content: center; gap: 1rem; list-style: none; flex-wrap: wrap;
             margin-top: 0.5rem; font-size: 0.95rem;
@@ -63,7 +63,6 @@
             padding: 0.6rem 1rem; border-radius: 20px; font-weight: 600; font-size: 0.95rem;
         }
         .zap-link:hover { background: rgba(255,255,255,0.3); }
-
         .whatsapp-icon { width: 20px; height: 20px; fill: currentColor; }
 
         /* MAIN */
@@ -78,39 +77,86 @@
             display: block; margin: 0.8rem auto 0; border-radius: 2px;
         }
 
-        /* SERVIÇOS */
+        /* === SERVIÇOS MELHORADOS === */
         .services {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem; margin-top: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.5rem;
         }
         .service-card {
-            background: white; border-radius: var(--radius); overflow: hidden;
-            box-shadow: var(--shadow); text-align: center; transition: var(--transition);
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
         }
-        .service-card:hover { transform: translateY(-6px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+        }
+
+        /* FOTO MENOR E VISÍVEL */
         .service-card img {
-            width: 100%; height: 160px; object-fit: cover;
-            border-bottom: 4px solid var(--primary); background: #eee;
+            width: 100%;
+            height: 120px;           /* MENOR E PROPORCIONAL */
+            object-fit: cover;       /* NÃO DISTORCE */
+            border-bottom: 3px solid var(--primary);
+            background: #eee;
         }
+
         .service-card p {
-            padding: 1rem; font-size: 0.95rem; font-weight: 500;
+            padding: 0.8rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .service-card p::before { content: 'Check'; margin-right: 0.5rem; color: var(--success); }
+        .service-card p::before {
+            content: 'Check';
+            margin-right: 0.5rem;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        /* RESPONSIVO MELHORADO */
+        @media (max-width: 480px) {
+            .header-container { flex-direction: column; text-align: center; }
+            .header-right { order: -1; width: 100%; justify-content: center; }
+            nav ul { gap: 0.8rem; font-size: 0.9rem; }
+            main { padding: 1rem; }
+            .services { grid-template-columns: 1fr; gap: 1rem; }
+            .service-card img { height: 140px; } /* um pouco maior no celular */
+            .service-card p { font-size: 0.95rem; padding: 1rem; }
+            header h1 { font-size: 1.2rem; }
+        }
+
+        @media (max-width: 320px) {
+            header h1 { font-size: 1.1rem; }
+            nav ul { flex-direction: column; align-items: center; gap: 0; }
+            nav ul li { width: 100%; text-align: center; }
+            nav a { display: block; padding: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.2); border-radius: 0; }
+            nav a:last-child { border-bottom: none; }
+        }
 
         /* GALERIA */
         .gallery {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 1rem; margin-top: 1.5rem;
         }
         .gallery img {
-            width: 100%; height: 140px; object-fit: cover;
-            border-radius: var(--radius); box-shadow: var(--shadow); transition: var(--transition);
+            width: 100%; height: 120px; object-fit: cover;
+            border-radius: var(--radius); box-shadow: var(--shadow);
         }
-        .gallery img:hover { transform: scale(1.05); }
 
         /* CONTATO */
         .contact-info { text-align: center; margin-bottom: 1.8rem; font-size: 1.1rem; }
-        .whatsapp-btn { display: none; } /* REMOVIDO */
+        .whatsapp-btn { display: none; }
 
         /* CARTÃO DIGITAL */
         .digital-card {
@@ -124,7 +170,7 @@
             padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: 600; margin: 0.5rem;
         }
 
-        /* BOTÃO WHATSAPP CENTRALIZADO ( antigamente flutuante ) */
+        /* BOTÃO WHATSAPP CENTRALIZADO */
         .whatsapp-center {
             display: flex;
             justify-content: center;
@@ -148,29 +194,9 @@
             100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
         }
 
-        /* FOOTER */
         footer {
             background: var(--primary); color: white; text-align: center;
             padding: 1.5rem; font-size: 0.95rem; margin-top: 3rem;
-        }
-
-        /* RESPONSIVO */
-        @media (max-width: 480px) {
-            .header-container { flex-direction: column; text-align: center; }
-            .header-right { order: -1; width: 100%; justify-content: center; }
-            nav ul { gap: 0.8rem; font-size: 0.9rem; }
-            main { padding: 1rem; }
-            .services, .gallery { grid-template-columns: 1fr; }
-            .gallery img { height: 180px; }
-        }
-
-        /* TELAS MUITO PEQUENAS */
-        @media (max-width: 320px) {
-            header h1 { font-size: 1.4rem; }
-            nav ul { flex-direction: column; align-items: center; gap: 0; }
-            nav ul li { width: 100%; text-align: center; }
-            nav a { display: block; padding: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.2); border-radius: 0; }
-            nav a:last-child { border-bottom: none; }
         }
     </style>
 </head>
@@ -210,7 +236,7 @@
             </p>
         </section>
 
-        <!-- SERVIÇOS -->
+        <!-- SERVIÇOS (FOTOS MENORES E VISÍVEIS) -->
         <section id="servicos">
             <h2>Serviços Técnicos</h2>
             <p style="text-align:center; margin-bottom:1.5rem;">Confira o que fazemos. Faça seu orçamento sem compromisso:</p>
